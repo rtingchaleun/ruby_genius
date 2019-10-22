@@ -1,0 +1,210 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Color Variables
+$blue-lighten-1: #42a5f5;  // mainly for href links
+$highlight-pink: #ff0066;
+
+$grey-lighten-1: #bdbdbd;
+$grey-lighten-3: #eeeeee;
+$grey-lighten-5: #fafafa;
+
+$code-magenta: #ff00ff;
+$code-yellow: #ffff00;
+$code-green: #4caf50;
+$code-grey: #808080;
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+
+}
+body {
+  font-family: 'Raleway', 'Helvetica Neue', 'calibri', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+pre {
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  padding: 1rem;
+}
+code {
+  white-space: pre-line;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2rem;
+
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: white;
+  background: #282c34;  /* space-blue darken-4 */
+}
+code span.constructor {
+  color: red;
+}
+code span.method {
+  color: yellow;
+}
+code span.num {
+  color: magenta;
+}
+code span.nil {
+  color: #1de9b6; /* teal accent-3 */
+}
+code span.string {
+  color: #76ff03;  /* light-green accent-3 */
+}
+code span.comment {
+  color: grey;
+}
+h5 .code,
+p .code {
+  color: $highlight-pink;
+  font-weight: 600;
+  font-family: 'Raleway', 'Helvetica Neue', 'calibri', sans-serif;
+  letter-spacing: 0.1rem;
+  padding: 0.1em 0.3em;
+  background-color: $grey-lighten-3;
+}
+.no-hover:hover {
+  background-color: none !important;
+}
+.note {
+  background-color: #eee;       /* grey lighten-3 */
+  border: 1px solid #bdbdbd;    /* grey lighten-1 */
+  padding: 15px;
+}
+nav.nav-extended .nav-content.affix-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid $grey-lighten-3;
+}
+.nav-wrapper {
+  border-bottom: 1px solid $grey-lighten-3;
+}
+nav .brand-logo {
+  color: #455a64;    /* blue-grey darken-2 */
+  padding-left: 20px !important;
+}
+nav a {
+  color: #455a64;    /* blue-grey darken-2 */
+  font-family: "Nunito", "Helvetica-Neue", Verdana, sans-serif;
+}
+nav ul a {
+  color: #455a64;    /* blue-grey darken-2 */
+  font-weight: 700;
+}
+nav ul a:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+nav ul a.no-hover:hover {
+  background-color: none;
+}
+nav.nav-extended .nav-content {
+  min-height: 60px;
+  height: auto;
+}
+#mobile-toc {
+  padding-left: 30px;
+}
+.dropdown-content {
+  top: 50px !important;
+  min-width: 250px;
+}
+.dropdown-content li>a, .dropdown-content li>span {
+  color: $blue-lighten-1;
+  font-family: "Nunito", "Helvetica-Neue", Verdana, sans-serif;
+}
+.dropdown-content li:hover, .dropdown-content li.active {
+  background-color: #fff;
+}
+.jump-bar {
+  height: 60px;
+  line-height: 60px;
+  display: inline-flex;
+}
+.jump-bar i {
+  font-size: 1rem;
+}
+.collection {
+  width: 100%;
+  border: none;
+}
+.collection.with-header .collection-header {
+  border-bottom: none;
+  background-color: transparent;
+}
+.collection .collection-item {
+  border-bottom: none;
+  background-color: transparent;
+}
+.collection a.collection-item {
+  font-weight: 600;
+}
+#table-of-contents {
+  position: fixed;
+  overflow: scroll;
+  height: calc(100% - 124px);
+  padding-bottom: 60px;
+}
+#table-of-contents .collection a.collection-item {
+  color: $blue-lighten-1;
+  padding: 5px 20px 5px 30px;
+  letter-spacing: 0.05rem;
+}
+#table-of-contents .collection a.collection-item:not(.active):hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+#main-article {
+  font-family: "Nunito", "Helvetica-Neue", Verdana, sans-serif;
+}
+#main-article .content {
+  margin-top: 20px;
+}
+#main-article .content img {
+  width: 100%;
+}
+#main-article h5 {
+  font-weight: 700;
+  padding-top: 5rem;
+}
+#main-article p {
+  font-size: 1.2rem;
+  color: #323232;
+}
+#main-article li {
+  font-size: 1.2rem;
+  color: #323232;
+}
+#main-article ul {
+  list-style-type: inherit;
+  padding-left: 2rem;
+}
+#main-article ul li {
+  list-style-type: inherit;
+}
+#related-articles {
+
+}
+#related-articles .collection a.collection-item {
+  color: #455a64    /* blue-grey darken-2 */
+}
+#related-articles .collection a.collection-item:not(.active):hover {
+  background-color: #fff;
+  color: #03a9f4 /* LIGHT-BLUE */
+}
+.col .row {
+  margin-left: auto;
+  margin-right: auto;
+}

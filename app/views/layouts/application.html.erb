@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %> | Ruby Genius</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Nunito:400,700|Inconsolata|Raleway:600&display=swap' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://kit.fontawesome.com/1c06c50ef8.js' %>
+    <%= javascript_include_tag 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' %>
+  </head>
+
+  <body onload="scrollSpy()" onscroll="scrollSpy()">
+    <!-- Dropdown - Chapters -->
+  	<ul id="dd-chapter" class="dropdown-content">
+  	  <li><a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/ruby/arrays/working-with-arrays.html">Working with Arrays</a></li>
+  	  <li><a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/ruby/arrays/array-methods.html">How to Use Array Methods in Ruby</a></li>
+  	</ul>
+
+  	<nav class="nav-extended">
+      <div class="nav-wrapper white">
+        <a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/index.html" class="brand-logo left">Ruby Genius</a>
+
+  			<!-- Trigger - Mobile Nav Bar -->
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+
+  			<!-- Nav Bar - Desktop -->
+  			<ul class="hide-on-med-and-down right">
+          <li><a target="_blank" href="https://github.com/rtingchaleun/Ruby-Genius">GitHub</a></li>
+        </ul>
+      </div>
+
+  		<!-- Nav Menu - Mobile -->
+  		<ul class="sidenav" id="mobile-menu">
+  	    <li><a target="_blank" href="https://github.com/rtingchaleun/Ruby-Genius">GitHub</a></li>
+  	  </ul>
+
+  		<!-- Secondary Nav Bar -->
+  		<div id="secondary-navbar" class="nav-content white center">
+  			<ul class="jump-bar">
+  				<!--
+          <li><a class="dropdown-trigger" href="#!" data-target="dd-epic">Ruby Arrays<i class="material-icons right">arrow_drop_down</i></a></li>
+  				<li><i class="fas fa-chevron-right blue-grey-text darken-2"></i></li>
+  				-->
+          <li><a class="dropdown-trigger" href="#!" data-target="dd-chapter">How to Use Array Methods in Ruby<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <%= yield %>
+
+    <script>
+  		$(document).ready(function(){
+  			$('.sidenav').sidenav({
+  				edge: "left",
+  				draggable: true,
+  				inDuration: 250,
+  				outDuration: 200,
+  				preventScrolling: true,
+  			});
+
+  			$(".dropdown-trigger").dropdown({
+  				alignment: "left",
+  				closeOnClick: true,
+  				hover: false,
+  				inDuration: 150,
+  				outDuration: 250,
+  			});
+
+  			$('.materialboxed').materialbox();
+
+  	    $('.carousel').carousel({
+  				fullWidth: true,
+  			});
+  	  });
+  	</script>
+
+  	<script>
+  		function scrollSpy() {
+        console.log("initialized scrollSpy");
+  		  let element = document.getElementsByTagName("HTML")[0];
+  		  let y = element.scrollTop;
+  			let secondaryNavBar = document.getElementById("secondary-navbar");
+  			let content = document.getElementById("content");
+        let toc = document.getElementById("table-of-contents");
+  			if (y > 64) {
+  				secondaryNavBar.classList.add("affix-top");
+  				content.style.marginTop = "60px";
+          toc.style.height = "calc(100% - 64px)";
+          toc.style.top = "64px";
+  			} else {
+  				secondaryNavBar.classList.remove("affix-top");
+  				content.style.marginTop = "0px";
+          toc.style.height = "calc(100% - 124px)";
+          toc.style.top = "124px";
+  			}
+  		}
+  	</script>
+  </body>
+</html>
