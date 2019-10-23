@@ -239,17 +239,17 @@
         <p>Iterator methods are similar to loops.</p>
 
         <h5 id="each"><span class="code">.each</span></h5>
-        <p>Yields each element for processing.</p>
+        <p>Yields each element in a collection, one after another, to a given block.</p>
 
-        <code><span class="comment"># all numbers</span>
+        <code><span class="comment"># print all numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">each</span>{ |num| print "#{num}, " }  <span class="comment">#=> 5, 2, 0, -3, -99</span>
         </code>
 
-        <h5 id="each_with_index">.each_with_index</h5>
-        <p>The <span class="code">.each_with_index</span> method takes an enumerable collection yields one element at a time to the given block, along with an index number.</p>
+        <h5 id="each_with_index"><span class="code">.each_with_index</span></h5>
+        <p>Yields each element in a collection along with its index number, one after another, to a given block.</p>
 
-        <code><span class="comment"># all numbers with index</span>
+        <code><span class="comment"># print all numbers with its index</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">each_with_index</span>{ |num, index| puts "#{num}, #{index}" }
           <span class="comment"># output</span>
@@ -260,8 +260,8 @@
           <span class="comment"># -99, 4</span>
         </code>
 
-        <h5 id="reduce">.reduce</h5>
-        <p>The <span class="code">.reduce</span> method take an enumerable collection and return an aggregate value.</p>
+        <h5 id="reduce"><span class="code">.reduce</span> / <span class="code">.inject</span></h5>
+        <p>Returns an aggregate value by combining all the elements in an array.</p>
 
         <code><span class="comment"># sum of all the numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -272,8 +272,8 @@
           numbers.<span class="method">reduce</span>{ |sum, num| sum * num }  <span class="comment">#=> 0</span>
         </code>
 
-        <h5 id="map">.map</h5>
-        <p>The <span class="code">.map</span> method take an enumerable collection, runs each item through the given block, and returns a new array of the results.</p>
+        <h5 id="map"><span class="code">.map</span></h5>
+        <p>Yields each item to a given block, and returns a new array of the results.</p>
 
         <code><span class="comment"># all numbers multiplied by two</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -287,8 +287,8 @@
         <h5 id="title-goals">Boolean Methods</h5>
         <p>Boolean methods return a true or false.</p>
 
-        <h5 id="all">.all?</h5>
-        <p>The <span class="code">.all?</span> method takes an enumerable collection and tests whether the given condition is true for every item in the collection. It returns true only if every element meets the condition.</p>
+        <h5 id="all"><span class="code">.all?</span></h5>
+        <p>Yields each item to a given block and returns true only if every element meets the condition.</p>
 
         <code><span class="comment"># are all numbers even?</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -299,8 +299,8 @@
           numbers.<span class="method">all?</span>{ |num| num >= <span class="num">0</span> }  <span class="comment">#=> false</span>
         </code>
 
-        <h5 id="any">.any?</h5>
-        <p>The <span class="code">.any?</span> method takes an enumerable collection and tests whether the given condition is true for any item in the collection. It returns true even if only one element meets the condition.</p>
+        <h5 id="any"><span class="code">.any?</span></h5>
+        <p>Yields each item to a given block and returns true if at least one element meets the condition.</p>
 
         <code><span class="comment"># any of the numbers even?</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -315,8 +315,8 @@
           numbers.<span class="method">all?</span>{ |num| num %  <span class="num">5</span> ==  <span class="num">0</span> }  <span class="comment">#=> true</span>
         </code>
 
-        <h5 id="none">.none?</h5>
-        <p>The <span class="code">.none?</span> method takes an enumerable collection and tests whether the given condition is true for 0 items in the collection.</p>
+        <h5 id="none"><span class="code">.none?</span></h5>
+        <p>Yields each item to a given block and returns true if none of the elements meet the condition.</p>
 
         <code><span class="comment"># none of the numbers are even?</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -327,15 +327,8 @@
           numbers.<span class="method">none?</span>{ |num| num == <span class="num">15</span> }  <span class="comment">#=> true</span>
         </code>
 
-
-        <!--
-        <p class="note">
-          Note: The goal was NOT to make a Sudoku Generator or a Sudoku Solver.
-        </p>
-        -->
-
         <h5 id="title-play">Contribute to this open-source project</h5>
-        <a href="https://github.com/rtingchaleun/Rons-Ruby-Docs" target="_blank">https://github.com/rtingchaleun/Rons-Ruby-Docs</a>
+        <a href="https://github.com/rtingchaleun/Rons-Ruby-Docs" target="_blank">https://github.com/rtingchaleun/ruby_genius</a>
       </div>
     </div>
     <!--
