@@ -73,10 +73,10 @@
         <p>Reference: <a href="https://ruby-doc.org/core-2.6.4/Enumerable.html">Official Ruby Docs</a></p>
 
         <h5 id="title-goals">Accessor Methods</h5>
-        <p>Accessor methods return a new value or representation.</p>
+        <p>Accessor methods return a new value or representation of the array.</p>
 
         <h5 id="min"><span class="code">.min</span></h5>
-        <p>Returns the item that qualifies as the "maximum".</p>
+        <p>Returns the item that qualifies as the "minimum".</p>
 
         <code><span class="comment"># find the lowest number:</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -99,8 +99,8 @@
           numbers.<span class="method">minmax</span>  <span class="comment">#=> [-99, 5]</span>
         </code>
 
-        <h5 id="count">.count</h5>
-        <p>The <span class="code">.count</span> method counts how many elements match the given criteria.</p>
+        <h5 id="count"><span class="code">.count</span></h5>
+        <p>Returns how many elements match the given criteria.</p>
 
         <code><span class="comment"># count all elements</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -108,100 +108,100 @@
 
           <span class="comment"># count even numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">count</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> 5</span>
+          numbers.<span class="method">count</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> 2</span>
 
           <span class="comment"># count numbers divisible by 5</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">count</span>{|num| num % <span class="num">5</span> == <span class="num">0</span>} <span class="comment">#=> 5</span>
+          numbers.<span class="method">count</span>{ |num| num % <span class="num">5</span> == <span class="num">0</span> } <span class="comment">#=> 2</span>
         </code>
 
         <h5 id="title-goals">Subset Methods</h5>
-        <p>Accessor methods return a new value or representation.</p>
+        <p>Subset methods return a subset of the array.</p>
 
-        <h5 id="first">.first</h5>
-        <p>The <span class="code">.first</span> method returns the first n elements.</p>
+        <h5 id="first"><span class="code">.first</span></h5>
+        <p>Returns the first <b><i>n</i></b> elements.</p>
 
-        <code><span class="comment"># the first number:</span>
+        <code><span class="comment"># get the first number</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">first</span>  <span class="comment">#=> 5</span>
 
-          <span class="comment"># the first n numbers:</span>
+          <span class="comment"># get the first 2 numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">first</span>(<span class="num">2</span>)  <span class="comment">#=> [5, 2]</span>
         </code>
 
-        <h5 id="drop">.drop</h5>
-        <p>The <span class="code">.drop</span> returns everything except the first n elements.</p>
+        <h5 id="drop"><span class="code">.drop</span></h5>
+        <p>Returns everything except the first <b><i>n</i></b> elements.</p>
 
-        <code><span class="comment"># skip the first two numbers:</span>
+        <code><span class="comment"># drop the first two numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">drop</span>(<span class="num">2</span>)  <span class="comment">#=> [0, -3, -99]</span>
         </code>
 
-        <h5 id="last">.last</h5>
-        <p>The <span class="code">.drop</span> method returns the last n elements.</p>
+        <h5 id="last"><span class="code">.last</span></h5>
+        <p>Returns the last <b><i>n</i></b> elements.</p>
 
-        <code><span class="comment"># the last number:</span>
+        <code><span class="comment"># get the last number</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">last</span>  <span class="comment">#=> [-99]</span>
 
-          <span class="comment"># the last n numbers:</span>
+          <span class="comment"># get the last two numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">last</span>(<span class="num">2</span>)  <span class="comment">#=> [-3, -99]</span>
         </code>
 
-        <h5 id="find">.find</h5>
-        <p>The <span class="code">.find</span> method finds the first element for which the given block returns true and returns the value of that element.</p>
+        <h5 id="find"><span class="code">.find</span></h5>
+        <p>Returns the first element for which the given block returns true.</p>
 
-        <code><span class="comment"># find first even number:</span>
+        <code><span class="comment"># find first even number</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> 2</span>
 
-          <span class="comment"># find first number divisible by 3:</span>
+          <span class="comment"># find first number divisible by 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> 0</span>
         </code>
 
-        <h5 id="find_index">.find_index</h5>
-        <p>The <span class="code">.find_index</span> method finds the first element for which the given block returns true and returns the index of that element.</p>
+        <h5 id="find_index"><span class="code">.find_index</span></h5>
+        <p>Returns the index of the first element for which the given block returns true.</p>
 
-        <code><span class="comment"># find index of first even number:</span>
+        <code><span class="comment"># find index of first even number</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find_index</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> 1</span>
 
-          <span class="comment"># find index of first number divisible by 3:</span>
+          <span class="comment"># find index of first number divisible by 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find_index</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> 2</span>
         </code>
 
-        <h5 id="find_all">.find_all</h5>
-        <p>The <span class="code">.find_all</span> / <span class="code">.select</span> method return a new array of only the elements for which the given block returns true. It's the simplest way to filter a list in Ruby.</p>
+        <h5 id="find_all"><span class="code">.find_all</span> / <span class="code">.select</span></h5>
+        <p>Returns a new array of only the elements for which the given block returns true. It's the simplest way to filter an array in Ruby.</p>
 
-        <code><span class="comment"># find all even numbers:</span>
+        <code><span class="comment"># find all even numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find_all</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [2, 0]</span>
           numbers.<span class="method">select</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [2, 0]</span>
 
-          <span class="comment"># find all numbers divisible by 3:</span>
+          <span class="comment"># find all numbers divisible by 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">find_all</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [0, -3, -99]</span>
           numbers.<span class="method">select</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [0, -3, -99]</span>
         </code>
 
-        <h5 id="reject">.reject</h5>
-        <p>The <span class="code">.reject</span> method works the opposite of the <span class="code">find_all</span> / <span class="code">select</span> method. It returns a new array of the elements for which the given block returns false.</p>
+        <h5 id="reject"><span class="code">.reject</span></h5>
+        <p>Returns a new array of the elements for which the given block returns false. This is the opposite of the <b>.find_all</b> and <b>.select</b></span> method. </p>
 
-        <code><span class="comment"># find all odd numbers:</span>
+        <code><span class="comment"># find all odd numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">reject</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [5, -3, -99]</span>
 
-          <span class="comment"># find all negative numbers:</span>
+          <span class="comment"># find all negative numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">reject</span>{ |num| num >= <span class="num">0</span> }  <span class="comment">#=> [-3, -99]</span>
         </code>
 
-        <h5 id="slice">.slice</h5>
-        <p>The <span class="code">.slice</span> method takes an enumerable collection and two integer parameters to return a subset of the array. The first parameter specifies what index to start at and the second parements specifies the number of elements.</p>
+        <h5 id="slice"><span class="code">.slice</span></h5>
+        <p>Takes two parameters and returns a subset of the array. The first parameter specifies what index to start at and the second parements specifies the number of elements to slice.</p>
 
         <code><span class="comment"># slice 3 elements starting from index 0</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -217,20 +217,20 @@
         </code>
 
         <h5 id="title-goals">Mutator Methods</h5>
-        <p>Accessor methods change the array.</p>
+        <p>Mutator methods change the array.</p>
 
-        <h5 id="sort">.sort</h5>
-        <p>The <span class="code">.sort</span> method takes an enumerable collection and returns a new collection, sorted.</p>
+        <h5 id="sort"><span class="code">.sort</span></h5>
+        <p>Returns a new collection, sorted.</p>
 
         <code><span class="comment"># sort an array of numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">sort</span>  <span class="comment">#=> [-99, -3, 0, 2, 5]</span>
         </code>
 
-        <h5 id="reverse">.reverse</h5>
-        <p>The <span class="code">.reverse</span> method takes an enumerable collection, reverses the order of the elements.</p>
+        <h5 id="reverse"><span class="code">.reverse</span></h5>
+        <p>Returns an array, reversed.</p>
 
-        <code><span class="comment"># reverse order an array of numbers</span>
+        <code><span class="comment"># reverse an array of numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">reverse</span>  <span class="comment">#=> [-99, -3, 0, 2, 5]</span>
         </code>
@@ -238,8 +238,8 @@
         <h5 id="title-goals">Iterator Methods</h5>
         <p>Iterator methods are similar to loops.</p>
 
-        <h5 id="each">.each</h5>
-        <p>The <span class="code">.each</span> method takes an enumerable collection and yields each element for processing.</p>
+        <h5 id="each"><span class="code">.each</span></h5>
+        <p>Yields each element for processing.</p>
 
         <code><span class="comment"># all numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
