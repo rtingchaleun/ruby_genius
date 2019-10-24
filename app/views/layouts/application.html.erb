@@ -14,11 +14,10 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://kit.fontawesome.com/1c06c50ef8.js' %>
-    <%= javascript_include_tag 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' %>
   </head>
 
-  <body onload="loadSpy()" onscroll="scrollSpy()" onresize="resizeSpy()">
+  <body onscroll="scrollSpy()" onresize="resizeSpy()">
     <!-- Dropdown - Chapters -->
   	<ul id="dd-chapter" class="dropdown-content">
   	  <li><a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/ruby/arrays/working-with-arrays.html">Working with Arrays</a></li>
@@ -62,37 +61,36 @@
     <%= yield %>
 
     <script>
-  		$(document).ready(function(){
-  			$('.sidenav').sidenav({
-  				edge: "left",
+      window.onload = function() {
+        console.log("window loaded");
+        resizeSpy();
+        scrollSpy();
+
+        /* initialize sidenav */
+        let sideNavElems = document.querySelectorAll('.sidenav');
+        let sideNavOptions = {
+          edge: "left",
   				draggable: true,
   				inDuration: 250,
   				outDuration: 200,
   				preventScrolling: true,
-  			});
+        }
+        let sideNavInstances = M.Sidenav.init(sideNavElems, sideNavOptions);
+        console.log("initialized sidenavs");
 
-  			$(".dropdown-trigger").dropdown({
+        /* initialize dropdowns */
+        let dropdownElems = document.querySelectorAll('.dropdown-trigger');
+        let dropdownOptions = {
   				alignment: "left",
   				closeOnClick: true,
   				hover: false,
   				inDuration: 150,
   				outDuration: 250,
-  			});
-
-  			$('.materialboxed').materialbox();
-
-  	    $('.carousel').carousel({
-  				fullWidth: true,
-  			});
-  	  });
-  	</script>
-
-    <script>
-      function loadSpy() {
-        resizeSpy();
-        scrollSpy();
+        }
+        let dropdownInstances = M.Dropdown.init(dropdownElems, dropdownOptions);
+        console.log("initialized dropdowns");
       }
-    </script>
+  	</script>
 
     <script>
   		function resizeSpy() {
