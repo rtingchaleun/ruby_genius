@@ -69,14 +69,19 @@
           <a href="#" data-target="mobile-toc" class="sidenav-trigger btn-floating btn-large waves-effect waves-light red hide-on-med-and-up"><i class="material-icons">toc</i></a>
         </div>
 
-        <h4><b>Array Methods</b></h4>
-        <p>Reference: <a href="https://ruby-doc.org/core-2.6.4/Enumerable.html">Official Ruby Docs</a></p>
+        <h4><b>How to Use Array Methods in Ruby</b></h4>
+        <p>
+          The purpose of this page is to give simple explanations and examples of how to use array methods in Ruby.
+          It does not cover every array method available in Ruby.
+        </p>
+
+        <%= render 'shared/see_official_ruby_docs' %>
 
         <h5 id="title-goals">Accessor Methods</h5>
         <p>Accessor methods return a new value or representation of the array.</p>
 
         <h5 id="min"><span class="code">.min</span></h5>
-        <p>Returns the item that qualifies as the "minimum".</p>
+        <p>Returns the element that qualifies as the "minimum".</p>
 
         <code><span class="comment"># find the lowest number:</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -84,7 +89,7 @@
         </code>
 
         <h5 id="max"><span class="code">.max</span></h5>
-        <p>Returns the item that qualifies as the "maximum".</p>
+        <p>Returns the element that qualifies as the "maximum".</p>
 
         <code><span class="comment"># find the highest number:</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -327,8 +332,7 @@
           numbers.<span class="method">none?</span>{ |num| num == <span class="num">15</span> }  <span class="comment">#=> true</span>
         </code>
 
-        <h5 id="title-play">Contribute to this open-source project</h5>
-        <a href="https://github.com/rtingchaleun/Rons-Ruby-Docs" target="_blank">https://github.com/rtingchaleun/ruby_genius</a>
+        <%= render 'shared/contribute_to_this_open_source_project' %>
       </div>
     </div>
     <!--
