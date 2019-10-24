@@ -18,7 +18,7 @@
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js' %>
   </head>
 
-  <body onload="scrollSpy()" onscroll="scrollSpy()">
+  <body onload="loadSpy()" onscroll="scrollSpy()" onresize="resizeSpy()">
     <!-- Dropdown - Chapters -->
   	<ul id="dd-chapter" class="dropdown-content">
   	  <li><a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/ruby/arrays/working-with-arrays.html">Working with Arrays</a></li>
@@ -30,12 +30,16 @@
         <a href="/Users/LeoBold/Google%20Drive/School/Website_Projects/Ruby-Genius/index.html" class="brand-logo left">Ruby Genius</a>
 
   			<!-- Trigger - Mobile Nav Bar -->
+        <!--
         <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        -->
 
   			<!-- Nav Bar - Desktop -->
+        <!--
   			<ul class="hide-on-med-and-down right">
           <li><a target="_blank" href="https://github.com/rtingchaleun/Ruby-Genius">GitHub</a></li>
         </ul>
+        -->
       </div>
 
   		<!-- Nav Menu - Mobile -->
@@ -83,24 +87,53 @@
   	  });
   	</script>
 
+    <script>
+      function loadSpy() {
+        resizeSpy();
+        scrollSpy();
+      }
+    </script>
+
+    <script>
+  		function resizeSpy() {
+        console.log("initialized resizeSpy");
+        let x = window.innerWidth;
+        let brandLogo = document.getElementsByClassName("brand-logo")[0];
+
+  			if (x <= 600) {
+          brandLogo.classList.add("center");
+          brandLogo.classList.remove("left");
+  			} else {
+          brandLogo.classList.remove("center");
+          brandLogo.classList.add("left");
+  			}
+  		}
+  	</script>
+
   	<script>
   		function scrollSpy() {
         console.log("initialized scrollSpy");
   		  let element = document.getElementsByTagName("HTML")[0];
   		  let y = element.scrollTop;
+
   			let secondaryNavBar = document.getElementById("secondary-navbar");
   			let content = document.getElementById("content");
         let toc = document.getElementById("table-of-contents");
+
+        let brandLogo = document.getElementsByClassName("brand-logo");
+
   			if (y > 64) {
   				secondaryNavBar.classList.add("affix-top");
   				content.style.marginTop = "60px";
           toc.style.height = "calc(100% - 64px)";
-          toc.style.top = "64px";
+          toc.style.top = "61px";
+          toc.style.marginTop = "0px";
   			} else {
   				secondaryNavBar.classList.remove("affix-top");
   				content.style.marginTop = "0px";
           toc.style.height = "calc(100% - 124px)";
           toc.style.top = "124px";
+          toc.style.marginTop = "4px";
   			}
   		}
   	</script>
