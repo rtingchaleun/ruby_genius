@@ -1,24 +1,13 @@
-# README
+# PROJECT NAME
+Ruby Genius
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# PROJECT DESCRIPTION
+The purpose of this project is to provide a simple and helpful resource to anyone that wants to learn Ruby and Rails.
 
-Things you may want to cover:
+# PROJECT WEBSITE
+https://ruby-genius.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# TECHNICAL SPECS
+Ruby version: 2.5.6
+Rails version: 6.0.0
