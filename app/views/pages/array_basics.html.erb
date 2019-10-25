@@ -51,8 +51,7 @@
 
         <h4><b>Array Basics</b></h4>
         <p>
-          The purpose of this page is to give simple explanations and examples of how to use array methods in Ruby.
-          It does not cover every array method available in Ruby.
+          The purpose of this page is to give simple explanations and examples of how to perform basic operations on arrays in Ruby.
         </p>
 
         <%= render 'shared/see_official_ruby_docs' %>
@@ -79,7 +78,7 @@
           <span class="comment">#=> [ 'this', 'is', 'an', 'array' ]</span>
         </code>
 
-        <h5 id="creating-array-new">Using "Array.new"</h5>
+        <h5 id="creating-array-new">Using <span class="code">Array.new</span></h5>
         <p>Use this when you want to create an empty array or quickly fill it with the same element.</p>
         <code><span class="comment"># create an empty array</span>
           array = <span class="constructor">Array</span>.<span class="method">new</span>
@@ -94,7 +93,7 @@
           <span class="comment">#=> [ true, true, true, true, true ]</span>
         </code>
 
-        <h5 id="creating-to-a">Using ".to_a"</h5>
+        <h5 id="creating-to-a">Using <span class="code">.to_a</span></h5>
         <p>This is a common method for converting the given values "to_array". </p>
         <code><span class="comment"># create an array with numbers 1 to 5</span>
           array = (<span class="num">1</span>..<span class="num">5</span>).<span class="method">to_a</span>
@@ -170,7 +169,7 @@
 
         <h5><b>Iterating Over an Array</b></h5>
 
-        <h5 id="iterating-each">.each</h5>
+        <h5 id="iterating-each"><span class="code">.each</span></h5>
         <code><span class="comment"># print all values in an array</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">each</span>{ |element| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span> }
@@ -182,7 +181,7 @@
           <span class="comment"># -99</span>
         </code>
 
-        <h5 id="iterating-each-with-index">.each_with_index</h5>
+        <h5 id="iterating-each-with-index"><span class="code">.each_with_index</span></h5>
         <code><span class="comment"># print all values with its index</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
           numbers.<span class="method">each_with_index</span>{ |element, index| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>, <span class="green-text">#{</span>index<span class="green-text">}</span>" }
@@ -194,7 +193,7 @@
           <span class="comment"># -99, 4</span>
         </code>
 
-        <h5 id="iterating-map">.map</h5>
+        <h5 id="iterating-map"><span class="code">.map</span></h5>
         <p>This is great to use if you actually want to go through each element, make modifications, and change the original array.</p>
         <code><span class="comment"># all numbers multiplied by two</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
