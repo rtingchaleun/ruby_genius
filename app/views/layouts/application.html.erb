@@ -20,8 +20,8 @@
   <body onscroll="scrollSpy()" onresize="resizeSpy()">
     <!-- Dropdown - Chapters -->
   	<ul id="dd-chapter" class="dropdown-content">
-  	  <li><a href="/ruby/array_basics">Array Basics</a></li>
-  	  <li><a href="/ruby/array_methods">How to Use Array Methods</a></li>
+  	  <li><a href="/ruby/array_basics" data-turbolinks="false">Array Basics</a></li>
+  	  <li><a href="/ruby/array_methods" data-turbolinks="false">How to Use Array Methods</a></li>
   	</ul>
 
   	<nav class="nav-extended">
@@ -53,7 +53,7 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dd-epic">Ruby Arrays<i class="material-icons right">arrow_drop_down</i></a></li>
   				<li><i class="fas fa-chevron-right blue-grey-text darken-2"></i></li>
   				-->
-          <li><a class="dropdown-trigger" href="#!" data-target="dd-chapter"><%= @page_title %><i class="material-icons right">arrow_drop_down</i></a></li>
+          <li><a class="dropdown-trigger" href="#" data-target="dd-chapter" data-turbolinks="false"><%= @page_title %><i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
     </nav>
