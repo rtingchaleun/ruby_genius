@@ -63,6 +63,9 @@ code span.string {
 code span.comment {
   color: grey;
 }
+code span.green-text {
+  color: $code-green;
+}
 h5 .code,
 p .code {
   color: $highlight-pink;

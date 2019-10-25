@@ -252,8 +252,13 @@
 
         <code><span class="comment"># print all values in an array</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">each</span>{ |element| <span class="method">print</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>, " }
-          <span class="comment">#=> 5, 2, 0, -3, -99</span>
+          numbers.<span class="method">each</span>{ |element| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>" }
+          <span class="comment"># =></span>
+          <span class="comment"># 5</span>
+          <span class="comment"># 2</span>
+          <span class="comment"># 0</span>
+          <span class="comment"># -3</span>
+          <span class="comment"># -99</span>
         </code>
 
         <h5 id="each_with_index"><span class="code">.each_with_index</span></h5>
