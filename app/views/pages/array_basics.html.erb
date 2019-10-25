@@ -1,0 +1,214 @@
+<div id="content">
+  <div class="row">
+
+    <!-- Table of Contents - Desktop -->
+    <aside id="table-of-contents" class="col l3 m3 hide-on-small-only">
+      <div class="collection with-header">
+        <div class="collection-header"><h6>Creating an Array</h6></div>
+        <a href="#creating-square-brackets" class="collection-item" data-turbolinks="false">Using Square Brackets</a>
+        <a href="#creating-percent-notation" class="collection-item" data-turbolinks="false">Using Percent Notation</a>
+        <a href="#creating-array-new" class="collection-item" data-turbolinks="false">Using Array.new</a>
+        <a href="#creating-to-a" class="collection-item" data-turbolinks="false">Using .to_a</a>
+
+        <div class="collection-header"><h6>Accessing Items in an Array</h6></div>
+        <a href="#accessing-index" class="collection-item" data-turbolinks="false">Using the Index Number</a>
+
+        <div class="collection-header"><h6>Modifying an Array</h6></div>
+        <a href="#modifying-modify" class="collection-item" data-turbolinks="false">Modifying an Element</a>
+        <a href="#modifying-add" class="collection-item" data-turbolinks="false">Adding an Element</a>
+        <a href="#modifying-remove" class="collection-item" data-turbolinks="false">Removing an Element</a>
+
+        <div class="collection-header"><h6>Iterating Over an Array</h6></div>
+        <a href="#iterating-each" class="collection-item" data-turbolinks="false">.each</a>
+        <a href="#iterating-each-with-index" class="collection-item" data-turbolinks="false">.each_with_index</a>
+      </div>
+    </aside>
+
+    <!-- Table of Contents - Mobile -->
+    <ul class="sidenav" id="mobile-toc">
+      <div class="collection-header"><h6>Creating an Array</h6></div>
+      <li><a href="#creating-square-brackets" class="collection-item" data-turbolinks="false">Using Square Brackets</a></li>
+      <li><a href="#creating-percent-notation" class="collection-item" data-turbolinks="false">Using Percent Notation</a></li>
+      <li><a href="#creating-array-new" class="collection-item" data-turbolinks="false">Using Array.new</a></li>
+      <li><a href="#creating-to-a" class="collection-item" data-turbolinks="false">Using .to_a</a></li>
+
+      <div class="collection-header"><h6>Accessing Items in an Array</h6></div>
+      <li><a href="#accessing-index" class="collection-item" data-turbolinks="false">Using the Index Number</a></li>
+
+      <li><a class="collection-item">Modifying an Array</a></li>
+      <li><a href="#modifying-modify" class="collection-item" data-turbolinks="false">Modifying an Element</a></li>
+      <li><a href="#modifying-add" class="collection-item" data-turbolinks="false">Adding an Element</a></li>
+      <li><a href="#modifying-remove" class="collection-item" data-turbolinks="false">Removing an Element</a></li>
+
+      <li><a class="collection-item">Iterating Over an Array</a></li>
+      <li><a href="#iterating-each" class="collection-item" data-turbolinks="false">.each</a></li>
+      <li><a href="#iterating-each-with-index" class="collection-item" data-turbolinks="false">.each_with_index</a></li>
+    </ul>
+
+    <main id="main-article" class="col l7 push-l4 m8 push-m3 s10 push-s1">
+      <article class="content row">
+        <%= render 'shared/trigger_mobile_table_of_contents' %>
+
+        <h4><b>Array Basics</b></h4>
+        <p>
+          The purpose of this page is to give simple explanations and examples of how to use array methods in Ruby.
+          It does not cover every array method available in Ruby.
+        </p>
+
+        <%= render 'shared/see_official_ruby_docs' %>
+
+        <h5 id="title-goals">Creating an Array</h5>
+        <p>We will show 4 common ways of creating an array.</p>
+
+        <h5 id="creating-square-brackets">Using "Square Brackets" <span class="code">[]</span></h5>
+        <p>This is probably the most common way of creating an array.</p>
+        <code><span class="comment"># create an array of integers called "numbers"</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+
+          <span class="comment"># create an array of strings called "strings"</span>
+          strings = [ <span class="string">'this'</span>, <span class="string">'is'</span>, <span class="string">'an'</span>, <span class="string">'array'</span> ]
+
+          <span class="comment"># create an array of mixed objects (integer, string, and float) called "objects"</span>
+          objects = [ <span class="num">8</span>, <span class="string">'car'</span>, <span class="num">12.0</span> ]
+        </code>
+
+        <h5 id="creating-percent-notation">Using "Percent Notation" <span class="code">%w</span></h5>
+        <p>This is the preferred notation when each entry is a single word. It allows you to skip writing the commas (<span class="code">,</span>) and quotation marks (<span class="code">''</span>).</p>
+        <code><span class="comment"># create an array of strings called "strings"</span>
+          numbers = %w{<span class="string">this is an array</span>}
+          <span class="comment">#=> [ 'this', 'is', 'an', 'array' ]</span>
+        </code>
+
+        <h5 id="creating-array-new">Using "Array.new"</h5>
+        <p>Use this when you want to create an empty array or quickly fill it with the same element.</p>
+        <code><span class="comment"># create an empty array</span>
+          array = <span class="constructor">Array</span>.<span class="method">new</span>
+          <span class="comment">#=> [ ]</span>
+
+          <span class="comment"># create an array with 5 empty elements</span>
+          array = <span class="constructor">Array</span>.<span class="method">new</span>(<span class="num">5</span>)
+          <span class="comment">#=> [ nil, nil, nil, nil, nil ]</span>
+
+          <span class="comment"># create an array with 5 elements with a given value</span>
+          array = <span class="constructor">Array</span>.<span class="method">new</span>(<span class="num">5</span>, <span class="nil">true</span>)
+          <span class="comment">#=> [ true, true, true, true, true ]</span>
+        </code>
+
+        <h5 id="creating-to-a">Using ".to_a"</h5>
+        <p>This is a common method for converting the given values "to_array". </p>
+        <code><span class="comment"># create an array with numbers 1 to 5</span>
+          array = (<span class="num">1</span>..<span class="num">5</span>).<span class="method">to_a</span>
+          <span class="comment">#=> [ 1, 2, 3, 4, 5 ]</span>
+        </code>
+
+        <h5><b>Accessing Elements</b></h5>
+        <p>Accessing an element in an array is quite straightforward by referring to an index number.</p>
+
+        <h5 id="accessing-index">Using the Index Number</h5>
+        <code><span class="comment"># Access elements by referring to it's index number</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers[<span class="num">0</span>] <span class="comment">#=> 1</span>
+          numbers[<span class="num">1</span>] <span class="comment">#=> 2</span>
+          numbers[<span class="num">2</span>] <span class="comment">#=> 4</span>
+          numbers[<span class="num">-1</span>] <span class="comment">#=> 16</span>
+          numbers[<span class="num">-2</span>] <span class="comment">#=> 8</span>
+        </code>
+
+        <h5><b>Modifying an Array</b></h5>
+        <p>Here we will show how you can easily modify an existing array.</p>
+
+        <h5 id="modifying-modify">Modifying an Element</h5>
+        <code><span class="comment"># Modify the first element.</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers[<span class="num">0</span>] = <span class="num">100</span>
+          <span class="comment">#=> [ 100, 2, 4, 8, 16 ]</span>
+
+          <span class="comment"># Modify the 3rd element.</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers[<span class="num">2</span>] = <span class="num">99</span>
+          <span class="comment">#=> [ 1, 2, 99, 8, 16 ]</span>
+
+          <span class="comment"># Modify the last element.</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers[<span class="num">-1</span>] = <span class="num">200</span>
+          <span class="comment">#=> [ 1, 2, 4, 8, 200 ]</span>
+        </code>
+
+        <h5 id="modifying-add">Adding an Element</h5>
+        <code><span class="comment"># Add an element to the beginning</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">unshift</span>(<span class="num">99</span>)
+          <span class="comment">#=> [ 99, 1, 2, 4, 8, 16 ]</span>
+
+          <span class="comment"># Add an element to the end</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">push</span>(<span class="num">99</span>)
+          <span class="comment">#=> [ 1, 2, 4, 8, 16, 99 ]</span>
+
+          <span class="comment"># Add/Insert an element to a specific position</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">insert</span>(<span class="num">2, 99</span>)
+          <span class="comment">#=> [ 1, 2, 99, 4, 8, 16 ]</span>
+        </code>
+
+        <h5 id="modifying-remove">Removing an Element</h5>
+        <code><span class="comment"># Remove the first element</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">shift</span>	<span class="comment">#=> 1</span>
+          numbers <span class="comment">#=> [ 2, 4, 8, 16 ]</span>
+
+          <span class="comment"># Remove the last element</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">pop</span> <span class="comment">#=> 16</span>
+          numbers <span class="comment">#=> [ 1, 2, 4, 8 ]</span>
+
+          <span class="comment"># Remove/Delete an element at a specific position</span>
+          numbers = [ <span class="num">1</span>, <span class="num">2</span>, <span class="num">4</span>, <span class="num">8</span>, <span class="num">16</span> ]
+          numbers.<span class="method">delete_at</span>(<span class="num">2</span>) <span class="comment">#=> 4</span>
+          numbers <span class="comment">#=> [ 1, 2, 8, 16 ]</span>
+        </code>
+
+        <h5><b>Iterating Over an Array</b></h5>
+
+        <h5 id="iterating-each">.each</h5>
+        <code><span class="comment"># print all values in an array</span>
+          numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
+          numbers.<span class="method">each</span>{ |element| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span> }
+          <span class="comment"># =></span>
+          <span class="comment"># 5</span>
+          <span class="comment"># 2</span>
+          <span class="comment"># 0</span>
+          <span class="comment"># -3</span>
+          <span class="comment"># -99</span>
+        </code>
+
+        <h5 id="iterating-each-with-index">.each_with_index</h5>
+        <code><span class="comment"># print all values with its index</span>
+          numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
+          numbers.<span class="method">each_with_index</span>{ |element, index| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>, <span class="green-text">#{</span>index<span class="green-text">}</span>" }
+          <span class="comment"># =></span>
+          <span class="comment"># 5, 0</span>
+          <span class="comment"># 2, 1</span>
+          <span class="comment"># 0, 2</span>
+          <span class="comment"># -3, 3</span>
+          <span class="comment"># -99, 4</span>
+        </code>
+
+        <h5 id="iterating-map">.map</h5>
+        <p>This is great to use if you actually want to go through each element, make modifications, and change the original array.</p>
+        <code><span class="comment"># all numbers multiplied by two</span>
+          numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
+          numbers.<span class="method">map</span>{ |num| num * 2 }
+          <span class="comment">#=> [ 10, 4, 0, -6, -198 ]</span>
+
+          <span class="comment"># the even status for all numbers</span>
+          numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
+          numbers.<span class="method">map</span>(&:<span class="green-text">even?</span>)
+          <span class="comment">#=> [ false, true, true, false, false ]</span>
+        </code>
+
+        <%= render 'shared/contribute_to_this_open_source_project' %>
+      </article>
+    </main>
+  </div>
+</div>

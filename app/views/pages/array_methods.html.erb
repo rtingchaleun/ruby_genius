@@ -2,7 +2,7 @@
   <div class="row">
 
     <!-- Table of Contents - Desktop -->
-    <div id="table-of-contents" class="col l3 m3 hide-on-small-only">
+    <aside id="table-of-contents" class="col l3 m3 hide-on-small-only">
       <div class="collection with-header">
         <div class="collection-header"><h6>Accessor Methods</h6></div>
         <a href="#min" class="collection-item" data-turbolinks="false">.min</a>
@@ -34,48 +34,29 @@
         <a href="#any" class="collection-item" data-turbolinks="false">.any?</a>
         <a href="#none" class="collection-item" data-turbolinks="false">.none?</a>
       </div>
-    </div>
+    </aside>
 
     <!-- Table of Contents - Mobile -->
     <ul class="sidenav" id="mobile-toc">
-      <div class="collection-header"><h6>Accessor Methods</h6></div>
-      <li><a href="#min" class="collection-item" data-turbolinks="false">.min</a></li>
-      <li><a href="#max" class="collection-item" data-turbolinks="false">.max</a></li>
-      <li><a href="#minmax" class="collection-item" data-turbolinks="false">.minmax</a></li>
-      <li><a href="#count" class="collection-item" data-turbolinks="false">.count</a></li>
+			<div class="collection-header"><h6>Creating an Array</h6></div>
+			<li><a href="#creating-square-brackets" class="collection-item" data-turbolinks="false">Square Brackets</a></li>
+			<li><a href="#creating-percent-notation" class="collection-item" data-turbolinks="false">Percent Notation</a></li>
+			<li><a href="#creating-array-new" class="collection-item" data-turbolinks="false">Array.new</a></li>
+			<li><a href="#creating-to-a" class="collection-item" data-turbolinks="false">.to_a</a></li>
 
-      <div class="collection-header"><h6>Subset Methods</h6></div>
-      <li><a href="#first" class="collection-item" data-turbolinks="false">.first</a></li>
-      <li><a href="#drop" class="collection-item" data-turbolinks="false">.drop</a></li>
-      <li><a href="#last" class="collection-item" data-turbolinks="false">.last</a></li>
-      <li><a href="#find" class="collection-item" data-turbolinks="false">.find</a></li>
-      <li><a href="#find_index" class="collection-item" data-turbolinks="false">.find_index</a></li>
-      <li><a href="#find_all" class="collection-item" data-turbolinks="false">.find_all</a></li>
-      <li><a href="#reject" class="collection-item" data-turbolinks="false">.reject</a></li>
+			<div class="collection-header"><h6>Accessing Items in an Array</h6></div>
+			<li><a href="#accessing-index" class="collection-item" data-turbolinks="false">Index</a></li>
 
-      <div class="collection-header"><h6>Mutator Methods</h6></div>
-      <li><a href="#sort" class="collection-item" data-turbolinks="false">.sort</a></li>
-      <li><a href="#reverse" class="collection-item" data-turbolinks="false">.reverse</a></li>
-
-      <div class="collection-header"><h6>Iterator Methods</h6></div>
-      <li><a href="#each" class="collection-item" data-turbolinks="false">.each</a></li>
-      <li><a href="#each_with_index" class="collection-item" data-turbolinks="false">.each_with_index</a></li>
-      <li><a href="#reduce" class="collection-item" data-turbolinks="false">.reduce</a></li>
-      <li><a href="#map" class="collection-item" data-turbolinks="false">.map</a></li>
-
-      <div class="collection-header"><h6>Boolean Methods</h6></div>
-      <li><a href="#all" class="collection-item" data-turbolinks="false">.all?</a></li>
-      <li><a href="#any" class="collection-item" data-turbolinks="false">.any?</a></li>
-      <li><a href="#none" class="collection-item" data-turbolinks="false">.none?</a></li>
+			<div><a class="collection-header">Modifying an Array</a></div>
+			<li><a href="#modifying-modify" class="collection-item" data-turbolinks="false">Modifying an Element</a></li>
+			<li><a href="#modifying-add" class="collection-item" data-turbolinks="false">Adding an Element</a></li>
+			<li><a href="#modifying-remove" class="collection-item" data-turbolinks="false">Removing an Element</a></li>
+			<li><a href="#iterating" class="collection-item" data-turbolinks="false">Iterating Over an Array</a></li>
     </ul>
 
-    <div id="main-article" class="col l7 push-l4 m8 push-m3 s10 push-s1">
-      <div class="content row">
-
-        <!-- Trigger - Mobile Table of Contents -->
-        <div class="fixed-action-btn">
-          <a href="#" data-target="mobile-toc" class="sidenav-trigger btn-floating btn-large waves-effect waves-light red hide-on-med-and-up"><i class="material-icons">toc</i></a>
-        </div>
+    <main id="main-article" class="col l7 push-l4 m8 push-m3 s10 push-s1">
+      <article class="content row">
+        <%= render 'shared/trigger_mobile_table_of_contents' %>
 
         <h4><b>How to Use Array Methods in Ruby</b></h4>
         <p>
@@ -109,7 +90,7 @@
 
         <code><span class="comment"># find the lowest and highest number:</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">minmax</span>  <span class="comment">#=> [-99, 5]</span>
+          numbers.<span class="method">minmax</span>  <span class="comment">#=> [ -99, 5 ]</span>
         </code>
 
         <h5 id="count"><span class="code">.count</span></h5>
@@ -140,7 +121,7 @@
 
           <span class="comment"># get the first 2 numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">first</span>(<span class="num">2</span>)  <span class="comment">#=> [5, 2]</span>
+          numbers.<span class="method">first</span>(<span class="num">2</span>)  <span class="comment">#=> [ 5, 2 ]</span>
         </code>
 
         <h5 id="drop"><span class="code">.drop</span></h5>
@@ -148,7 +129,7 @@
 
         <code><span class="comment"># drop the first two numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">drop</span>(<span class="num">2</span>)  <span class="comment">#=> [0, -3, -99]</span>
+          numbers.<span class="method">drop</span>(<span class="num">2</span>)  <span class="comment">#=> [ 0, -3, -99 ]</span>
         </code>
 
         <h5 id="last"><span class="code">.last</span></h5>
@@ -156,11 +137,11 @@
 
         <code><span class="comment"># get the last number</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">last</span>  <span class="comment">#=> [-99]</span>
+          numbers.<span class="method">last</span>  <span class="comment">#=> [ -99 ]</span>
 
           <span class="comment"># get the last two numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">last</span>(<span class="num">2</span>)  <span class="comment">#=> [-3, -99]</span>
+          numbers.<span class="method">last</span>(<span class="num">2</span>)  <span class="comment">#=> [ -3, -99 ]</span>
         </code>
 
         <h5 id="find"><span class="code">.find</span></h5>
@@ -192,13 +173,13 @@
 
         <code><span class="comment"># find all even numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">find_all</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [2, 0]</span>
-          numbers.<span class="method">select</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [2, 0]</span>
+          numbers.<span class="method">find_all</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [ 2, 0 ]</span>
+          numbers.<span class="method">select</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [ 2, 0 ]</span>
 
           <span class="comment"># find all numbers divisible by 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">find_all</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [0, -3, -99]</span>
-          numbers.<span class="method">select</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [0, -3, -99]</span>
+          numbers.<span class="method">find_all</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [ 0, -3, -99 ]</span>
+          numbers.<span class="method">select</span>{ |num| num % <span class="num">3</span> == <span class="num">0</span> }  <span class="comment">#=> [ 0, -3, -99 ]</span>
         </code>
 
         <h5 id="reject"><span class="code">.reject</span></h5>
@@ -206,11 +187,11 @@
 
         <code><span class="comment"># find all odd numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">reject</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [5, -3, -99]</span>
+          numbers.<span class="method">reject</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [ 5, -3, -99 ]</span>
 
           <span class="comment"># find all negative numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">reject</span>{ |num| num >= <span class="num">0</span> }  <span class="comment">#=> [-3, -99]</span>
+          numbers.<span class="method">reject</span>{ |num| num >= <span class="num">0</span> }  <span class="comment">#=> [ -3, -99 ]</span>
         </code>
 
         <h5 id="slice"><span class="code">.slice</span></h5>
@@ -218,11 +199,11 @@
 
         <code><span class="comment"># slice 3 elements starting from index 0</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">slice</span>(0, 3)  <span class="comment">#=> [5, 2, 0]</span>
+          numbers.<span class="method">slice</span>(0, 3)  <span class="comment">#=> [ 5, 2, 0 ]</span>
 
           <span class="comment"># slice 2 elements starting from index 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">slice</span>(3, 2)  <span class="comment">#=> [-3, -99]</span>
+          numbers.<span class="method">slice</span>(3, 2)  <span class="comment">#=> [ -3, -99 ]</span>
 
           <span class="comment"># slice 1 element starting from index 3</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
@@ -237,7 +218,7 @@
 
         <code><span class="comment"># sort an array of numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">sort</span>  <span class="comment">#=> [-99, -3, 0, 2, 5]</span>
+          numbers.<span class="method">sort</span>  <span class="comment">#=> [ -99, -3, 0, 2, 5 ]</span>
         </code>
 
         <h5 id="reverse"><span class="code">.reverse</span></h5>
@@ -245,7 +226,7 @@
 
         <code><span class="comment"># reverse an array of numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">reverse</span>  <span class="comment">#=> [-99, -3, 0, 2, 5]</span>
+          numbers.<span class="method">reverse</span>  <span class="comment">#=> [ -99, -3, 0, 2, 5 ]</span>
         </code>
 
         <h5 id="title-goals">Iterator Methods</h5>
@@ -254,18 +235,19 @@
         <h5 id="each"><span class="code">.each</span></h5>
         <p>Yields each element in a collection, one after another, to a given block.</p>
 
-        <code><span class="comment"># print all numbers</span>
+        <code><span class="comment"># print all values in an array</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">each</span>{ |num| print "#{num}, " }  <span class="comment">#=> 5, 2, 0, -3, -99</span>
+          numbers.<span class="method">each</span>{ |element| <span class="method">print</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>, " }
+          <span class="comment">#=> 5, 2, 0, -3, -99</span>
         </code>
 
         <h5 id="each_with_index"><span class="code">.each_with_index</span></h5>
         <p>Yields each element in a collection along with its index number, one after another, to a given block.</p>
 
-        <code><span class="comment"># print all numbers with its index</span>
+        <code><span class="comment"># print all values with its index</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">each_with_index</span>{ |num, index| puts "#{num}, #{index}" }
-          <span class="comment"># output</span>
+          numbers.<span class="method">each_with_index</span>{ |element, index| <span class="method">puts</span> "<span class="green-text">#{</span>element<span class="green-text">}</span>, <span class="green-text">#{</span>index<span class="green-text">}</span>" }
+          <span class="comment"># =></span>
           <span class="comment"># 5, 0</span>
           <span class="comment"># 2, 1</span>
           <span class="comment"># 0, 2</span>
@@ -290,11 +272,13 @@
 
         <code><span class="comment"># all numbers multiplied by two</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">map</span>{ |num| num * 2}  <span class="comment">#=> [10, 4, 0, -6, -198]</span>
+          numbers.<span class="method">map</span>{ |num| num * 2}
+          <span class="comment">#=> [ 10, 4, 0, -6, -198 ]</span>
 
           <span class="comment"># the even status for all numbers</span>
           numbers = [ <span class="num">5</span>, <span class="num">2</span>, <span class="num">0</span>, <span class="num">-3</span>, <span class="num">-99</span> ]
-          numbers.<span class="method">map</span>(&:<span class="green-text">even?</span>)  <span class="comment">#=> [false, true, true, false, false]</span>
+          numbers.<span class="method">map</span>(&:<span class="green-text">even?</span>)
+          <span class="comment">#=> [ false, true, true, false, false ]</span>
         </code>
 
         <h5 id="title-goals">Boolean Methods</h5>
@@ -341,16 +325,7 @@
         </code>
 
         <%= render 'shared/contribute_to_this_open_source_project' %>
-      </div>
-    </div>
-    <!--
-    <div id="related-articles" class="col l3 push-l3 m8 push-m3 s10 push-s1">
-      <div class="collection with-header">
-        <div class="collection-header"><h6>Related Articles</h6></div>
-        <a href="#!" class="collection-item">Sudoku Solver</a>
-        <a href="#!" class="collection-item">Sudoku Generator</a>
-      </div>
-    </div>
-    -->
+      </article>
+    </main>
   </div>
 </div>
